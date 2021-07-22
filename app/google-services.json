@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "100784952319",
+    "project_id": "eatthis-d4714",
+    "storage_bucket": "eatthis-d4714.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:100784952319:android:42334fc619b70576db8dca",
+        "android_client_info": {
+          "package_name": "com.example.thecafe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "100784952319-ikdbcgh2eratt09e5tlcdge3uavqfe9g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBv0FnLQvHCj1wmlIEYiM3PaD_4DEhZ0_s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "100784952319-ikdbcgh2eratt09e5tlcdge3uavqfe9g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
