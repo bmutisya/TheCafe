@@ -8,7 +8,17 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainMenu"></activity>
+        <activity android:name=".DeliveryRegistration"></activity>
+        <activity android:name=".DeliveryLoginPhone" />
+        <activity android:name=".DeliveryLogin" />
+        <activity android:name=".Registration" />
+        <activity android:name=".LoginPhone" />
+        <activity android:name=".Login" />
+        <activity android:name=".ChefRegistration" />
+        <activity android:name=".ChefLoginPhone" />
+        <activity android:name=".ChefLogin" />
+        <activity android:name=".ChooseOne" />
+        <activity android:name=".MainMenu" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
