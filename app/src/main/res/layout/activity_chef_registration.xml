@@ -103,7 +103,8 @@
                 android:orientation="horizontal">
                 <com.hbb20.CountryCodePicker
                     android:layout_width="120dp"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:id="@+id/countrycode"/>
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/Mobileno"
                     android:layout_width="match_parent"
