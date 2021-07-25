@@ -4,6 +4,130 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/pic14"
     tools:context=".ChefLoginPhone">
+
+    <LinearLayout
+        android:layout_width="280dp"
+        android:layout_height="400dp"
+        android:orientation="vertical"
+        android:id="@+id/linearlayourofchefloginphone"
+        android:background="@drawable/background_shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:padding="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Verify Phone Number"
+            android:layout_gravity="center"
+            android:textColor="@color/Black"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+            <com.hbb20.CountryCodePicker
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/countcodepicker"/>
+            <EditText
+                android:layout_width="135dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/chefverifynumber"
+                android:hint="Phone Number"
+                android:layout_marginLeft="7dp"/>
+        </LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/chefotp"
+            android:text="Send Code"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/button_shape"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/chefphonenoaccount"
+            android:layout_marginTop="10dp"
+            android:text="Dont have a account? Signup here"
+            android:textColor="@color/DarkBlue"
+            android:textAlignment="center"
+            android:textSize="16sp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TableRow
+                android:id="@+id/hr"
+                android:layout_width="105dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="#6E6C6C" />
+
+            <TextView
+                android:id="@+id/OR"
+                android:layout_width="44dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="7dp"
+                android:text="OR"
+                android:textAlignment="center"
+                android:textColor="@color/Black"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TableRow
+                android:id="@+id/dr"
+                android:layout_width="105dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="#6E6C6C" />
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/custsigninwith"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Signin with"
+            android:textAlignment="center"
+            android:textColor="@color/Black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/chefemailbtn"
+            android:layout_width="105dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btnred"
+            android:drawableLeft="@drawable/ic_baseline_email_24"
+            android:drawablePadding="5dp"
+            android:padding="10dp"
+            android:text="Email"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+
+            />
+
+
+
+
+
+
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
