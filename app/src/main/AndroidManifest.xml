@@ -8,7 +8,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DeliveryRegistration"></activity>
+        <activity android:name=".ChefVerifyPhone"></activity>
+        <activity android:name=".DeliveryRegistration" />
         <activity android:name=".DeliveryLoginPhone" />
         <activity android:name=".DeliveryLogin" />
         <activity android:name=".Registration" />

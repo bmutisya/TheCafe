@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "100784952319",
+    "firebase_url": "https://eatthis-d4714-default-rtdb.firebaseio.com",
     "project_id": "eatthis-d4714",
     "storage_bucket": "eatthis-d4714.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "100784952319-2scna4n1fhptjqoet7h28dnuhn9t1vdh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.thecafe",
+            "certificate_hash": "cfdcb7160cdfce01433a6ff45bf7dc9e66e6ecd3"
+          }
+        },
         {
           "client_id": "100784952319-ikdbcgh2eratt09e5tlcdge3uavqfe9g.apps.googleusercontent.com",
           "client_type": 3
