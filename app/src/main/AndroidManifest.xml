@@ -8,7 +8,10 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ChefVerifyPhone"></activity>
+        <activity android:name=".ChefSendOtp"></activity>
+        <activity android:name=".ChefForgotPassword" />
+        <activity android:name=".ChefFoodPanel_BottomNavigation" />
+        <activity android:name=".ChefVerifyPhone" />
         <activity android:name=".DeliveryRegistration" />
         <activity android:name=".DeliveryLoginPhone" />
         <activity android:name=".DeliveryLogin" />

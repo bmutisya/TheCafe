@@ -2,7 +2,6 @@ package com.example.thecafe;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.arch.core.executor.TaskExecutor;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -26,7 +25,7 @@ import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
 
-public class ChefVerifyPhone extends AppCompatActivity {
+public class ChefSendOtp extends AppCompatActivity {
     String verificationId;
     FirebaseAuth FAuth;
     Button verify,Resend;
@@ -37,9 +36,8 @@ public class ChefVerifyPhone extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chef_verify_phone);
-
-        phonenumber= getIntent().getStringExtra("phonenumber".trim());
+        setContentView(R.layout.activity_chef_send_otp);
+        phonenumber= getIntent().getStringExtra("Phonenum".trim());
         entercode= findViewById(R.id.phoneno);
         verify=findViewById(R.id.verify);
         Resend=findViewById(R.id.Resendoto);
@@ -105,51 +103,21 @@ public class ChefVerifyPhone extends AppCompatActivity {
 
             }
         });
-
     }
-
     private void Resendotp(String phonenumber) {
 
         sendverificationcode(phonenumber);
     }
-
-
-    private void verifyCode(String code) {
-        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, code);
-        linkCredential(credential);
-    }
-
-    private void linkCredential(PhoneAuthCredential credential) {
-
-        FAuth.getCurrentUser().linkWithCredential(credential)
-                .addOnCompleteListener(ChefVerifyPhone.this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-
-                            Intent intent = new Intent(ChefVerifyPhone.this,MainMenu.class);
-                            startActivity(intent);
-                            finish();
-
-
-                        } else {
-                            ReusableCodeForAll.ShowAlert(ChefVerifyPhone.this,"Error",task.getException().getMessage());
-                        }
-                    }
-                });
-    }
-
-
     private void sendverificationcode(String number) {
 
        // PhoneAuthProvider.getInstance().verifyPhoneNumber(
         //        number,
-           //     60,
-           //     TimeUnit.SECONDS,
-              //  (Activity) TaskExecutors.MAIN_THREAD,
+         //       60,
+             //   TimeUnit.SECONDS,
+             //   (Activity) TaskExecutors.MAIN_THREAD,
                 //TaskExecutors.MAIN_THREAD,
-             //   mCallBack
-        //);
+              //  mCallBack
+       // );
         PhoneAuthOptions options =
                 PhoneAuthOptions.newBuilder(FAuth)
                         .setPhoneNumber(number)       // Phone number to verify
@@ -184,8 +152,28 @@ public class ChefVerifyPhone extends AppCompatActivity {
         @Override
         public void onVerificationFailed(FirebaseException e) {
 
-            Toast.makeText(ChefVerifyPhone.this, e.getMessage(), Toast.LENGTH_LONG).show();
+            Toast.makeText(ChefSendOtp.this, e.getMessage(), Toast.LENGTH_LONG).show();
         }
     };
-}
 
+    private void verifyCode(String code) {
+        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, code);
+        signInWithPhone(credential);
+    }
+
+    private void signInWithPhone(PhoneAuthCredential credential) {
+        FAuth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull  Task<AuthResult> task) {
+                if (task.isSuccessful()){
+                    startActivity( new Intent(ChefSendOtp.this,ChefFoodPanel_BottomNavigation.class));
+                    finish();
+                }else{
+                    ReusableCodeForAll.ShowAlert(ChefSendOtp.this,"Error",task.getException().getMessage());
+                }
+
+            }
+        });
+
+    }
+}
